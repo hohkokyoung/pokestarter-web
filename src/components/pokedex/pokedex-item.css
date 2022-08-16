@@ -1,0 +1,60 @@
+.empty-pokedex-pokemon-container {
+  height: 80px;
+}
+
+.pokedex-pokemon-container {
+  transform: scale(0) !important;
+  transform-origin: right !important;
+  user-select: none;
+  cursor: pointer;
+  transition: 2s all ease-in-out;
+}
+
+.pokedex-pokemon-container:nth-child(1), .pokedex-pokemon-container:nth-child(7) {
+  opacity: 0;
+  transform: scale(0) !important;
+  transform-origin: right !important;
+  pointer-events: none;
+}
+
+.pokedex-pokemon-container:nth-child(3), .pokedex-pokemon-container:nth-child(5) {
+  transform: scale(1) !important;
+  transform-origin: right !important;
+  opacity: .8;
+}
+
+.pokedex-pokemon-container:nth-child(2), .pokedex-pokemon-container:nth-child(6) {
+  transform: scale(.8) !important;
+  transform-origin: right !important;
+  opacity: .5;
+  /* negative of (size of picture - padding - font size) divide by 2 -> for each dimension */
+  margin: -calc((80px - 1.6rem - 2em) / 2) 0;
+}
+
+.pokedex-pokemon-container:nth-child(4) {
+  transform: scale(1.2) !important;
+  transform-origin: right !important;
+  /* (size of picture - padding - font size) divide by 2 -> for each dimension */
+  /* this is because flex gap initiates before transform scale, the result margin will be affected */
+  margin: calc((80px - 1.6rem - 2em) / 2) 0;
+}
+
+.pokemon-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.pokemon-info-container {
+  background-color: rgb(6, 53, 49);
+  padding: 0.8rem 2rem 0.8rem 2rem;
+  width: 100%;
+  border-radius: 4rem;
+}
