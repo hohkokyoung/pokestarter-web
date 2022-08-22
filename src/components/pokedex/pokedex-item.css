@@ -3,40 +3,18 @@
 }
 
 .pokedex-pokemon-container {
-  transform: scale(0) !important;
-  transform-origin: right !important;
   user-select: none;
   cursor: pointer;
-  transition: 2s all ease-in-out;
+  width: 100% !important;
 }
 
-.pokedex-pokemon-container:nth-child(1), .pokedex-pokemon-container:nth-child(7) {
-  opacity: 0;
-  transform: scale(0) !important;
-  transform-origin: right !important;
+.pokedex-pokemon-container:first-child, .pokedex-pokemon-container:last-child {
   pointer-events: none;
 }
 
-.pokedex-pokemon-container:nth-child(3), .pokedex-pokemon-container:nth-child(5) {
-  transform: scale(1) !important;
-  transform-origin: right !important;
-  opacity: .8;
-}
-
 .pokedex-pokemon-container:nth-child(2), .pokedex-pokemon-container:nth-child(6) {
-  transform: scale(.8) !important;
-  transform-origin: right !important;
-  opacity: .5;
   /* negative of (size of picture - padding - font size) divide by 2 -> for each dimension */
   margin: -calc((80px - 1.6rem - 2em) / 2) 0;
-}
-
-.pokedex-pokemon-container:nth-child(4) {
-  transform: scale(1.2) !important;
-  transform-origin: right !important;
-  /* (size of picture - padding - font size) divide by 2 -> for each dimension */
-  /* this is because flex gap initiates before transform scale, the result margin will be affected */
-  margin: calc((80px - 1.6rem - 2em) / 2) 0;
 }
 
 .pokemon-image-container {
@@ -57,4 +35,14 @@
   padding: 0.8rem 2rem 0.8rem 2rem;
   width: 100%;
   border-radius: 4rem;
+}
+
+.selected {
+  /* (size of picture - padding - font size) divide by 2 -> for each dimension */
+  /* this is because flex gap initiates before transform scale, the result margin will be affected */
+  margin: calc((80px - 1.6rem - 2em) / 2) 0;
+}
+
+.selected .pokemon-info-container {
+  background-color: var(--primary-color);
 }
